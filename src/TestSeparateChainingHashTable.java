@@ -1,3 +1,9 @@
+/****************************************************************************
+ @file: TestSeparateChainingHastTable.java
+ @description: This program tests the separate chaining hashtable
+ @author: Yulanda Zheng
+ @date: December 6, 2024
+ ****************************************************************************/
 public class TestSeparateChainingHashTable {
     public static void main( String [ ] args ) {
         SeparateChainingHashTable<Integer> H = new SeparateChainingHashTable<>( );

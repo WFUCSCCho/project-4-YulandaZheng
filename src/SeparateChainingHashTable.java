@@ -1,3 +1,9 @@
+/****************************************************************************
+ @file: SeparateChainingHashTable.java
+ @description: This program has the separate chaining hashtable program and its functions and parameters
+ @author: Yulanda Zheng
+ @date: December 6, 2024
+ ****************************************************************************/
 import java.util.LinkedList;
 import java.util.List;
 
@@ -38,7 +44,15 @@ public class SeparateChainingHashTable<AnyType> {
      * @param x the item to insert.
      */
     public void insert(AnyType x) {
-        // FINISH ME
+        List<AnyType> whichList = theLists[myhash(x)];
+        if(!contains(x)){ //x doesn't exist in the table
+            whichList.add(x);
+
+            //Rehashing table if needed
+            if (currentSize++ > theLists.length){
+                rehash();
+            }
+        }
     }
 
     /**
@@ -47,24 +61,32 @@ public class SeparateChainingHashTable<AnyType> {
      * @param x the item to remove.
      */
     public void remove(AnyType x) {
-        // FINISH ME
+        List<AnyType> whichList = theLists[myhash(x)];
+        if(whichList.contains(x)){ //checking to see if in table
+            whichList.remove(x);
+            currentSize--;
+        }
     }
 
     /**
      * Find an item in the hash table.
      *
      * @param x the item to search for.
-     * @return true if x is not found.
+     * @return true if x is found.
      */
     public boolean contains(AnyType x) {
-        // FINISH ME
+        List<AnyType> whichList = theLists[myhash(x)];
+        return whichList.contains(x);
     }
 
     /**
      * Make the hash table logically empty.
      */
     public void makeEmpty() {
-        // FINISH ME
+        for(int i = 0; i < theLists.length; i++){
+            theLists[i].clear();
+        }
+        currentSize = 0;
     }
 
     /**
@@ -88,7 +110,22 @@ public class SeparateChainingHashTable<AnyType> {
     }
 
     private void rehash() {
-        // FINISH ME
+        List<AnyType>[] oldList = theLists;
+
+        //Creating new list
+        theLists = new List[nextPrime(2*theLists.length)];
+        for(int i = 0; i < theLists.length; i++){
+            theLists[i] = new LinkedList<>();
+        }
+
+        //Copy table to new table
+        currentSize = 0;
+        for(List<AnyType> list : oldList){
+            for(AnyType item : list){
+                insert(item);
+            }
+        }
+
     }
 
     private int myhash(AnyType x) {
