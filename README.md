@@ -97,7 +97,7 @@ Dataset Source: https://www.kaggle.com/datasets/waqi786/cats-dataset/data
 
 Dataset Modifications ("None" if unchanged): None
 
-Result Analysis: //FINISH
+Result Analysis: From my graphs, the sorted graph's running time is about O(c) for search and deletion which is the average running time, but O(n) for insertion which is the worst running time. For the shuffled list, it seems like the general trend for all of the functions is about O(n), but there are jumps for deletion and insert has higher slope than search. For reverse sorted list, the running times for search and delete are about the same for O(n) and insert is also O(n) but has a higher slope that has a jump in the middle. The jumps for the insertion lines could be due to needing to rehash the table as it only happens twice, once for sorted and once for reverse sorted. In general, my graphs seem to show that the running time are usually the worst running time O(n).
 
 ## Submission:
 
