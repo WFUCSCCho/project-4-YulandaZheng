@@ -80,24 +80,24 @@ Using your favorite graphing software (e.g., MS Excel or Google Sheets), plot th
 each case. Take a screenshot of your graph and put them here by modifying this file, committing, and pushing
 it to this repository.
 
-Insertion, search, and deletion running time (already sorted):
-
-![Firefly picture of a cat 86147](https://github.com/user-attachments/assets/8b2d008e-3011-4979-97b8-fa2e9886a01a)
+Insertion, search, and deletion running time (already sorted): <img width="361" alt="image" src="https://github.com/user-attachments/assets/0dede841-cdae-4f44-aecf-20212f3b28e3">
 
 
-Insertion, search, and deletion running time (shuffled):
+Insertion, search, and deletion running time (shuffled): <img width="361" alt="image" src="https://github.com/user-attachments/assets/f2d533b2-52ea-43d8-add2-f9a75e84198b">
 
-Insertion, search, and deletion running time (reversed):
+
+Insertion, search, and deletion running time (reversed): <img width="361" alt="image" src="https://github.com/user-attachments/assets/25482575-ddb8-4314-b27c-7a98b2333268">
+
 
 ## 5. **Document your Dataset and Results**
 Document the source of your dataset and any modifications you made to it. Describe the results of your analysis and 
 how it compares to the theoretical performance of the hash table operations.
 
-Dataset Source: // FINISH ME
+Dataset Source: https://www.kaggle.com/datasets/waqi786/cats-dataset/data
 
-Dataset Modifications ("None" if unchanged): // FINISH ME
+Dataset Modifications ("None" if unchanged): None
 
-Result Analysis: // FINISH ME
+Result Analysis: From my graphs, the sorted graph's running time is about O(c) for search and deletion which is the average running time, but O(n) for insertion which is the worst running time. For the shuffled list, it seems like the general trend for all of the functions is about O(n), but there are jumps for deletion and insert has higher slope than search. For reverse sorted list, the running times for search and delete are about the same for O(n) and insert is also O(n) but has a higher slope that has a jump in the middle. The jumps for the insertion lines could be due to needing to rehash the table as it only happens twice, once for sorted and once for reverse sorted. In general, my graphs seem to show that the running time are usually the worst running time O(n).
 
 ## Submission:
 
